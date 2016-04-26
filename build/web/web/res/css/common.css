@@ -1,0 +1,132 @@
+ body
+    {
+        height: 100%;
+        /*background-image: url('res/img/bollillero.jpg');*/
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color:#9B3C52;
+    }
+    .wrap1
+    {
+        background-color:rgba(255,255,255,0.85);
+    }
+    .hx
+    {
+        font-family: 'Arial', cursive;
+        background-color:rgba(255,255,255,0.85);
+        font-size: 48px;
+        text-align: center;
+    }
+    .hs
+    {
+        font-family: 'Arial', cursive;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    tr
+    {
+        background-color:white;
+    }
+    
+    
+    .nav-enlaces
+    {
+        font-size: 18px;
+    }
+    .titulares
+    {
+        font-family: 'Bangers', cursive;
+        text-align: center;
+    }
+    .contenedor
+    {
+        margin-left:25px;
+        margin-right:25px;
+        margin-bottom:25px;
+    }
+    .banner
+    {
+        background-color:rgba(0,0,0,0.5);
+        min-height: 130px;
+        max-height: 130px;
+        overflow: hidden;
+    }
+    .htresBanner
+    {
+        font-size: 48px;
+        margin-top:30px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    .banner2
+    {
+        background-color:rgba(255,255,255,0.8);;
+        text-align: center;
+        padding:4px;
+        overflow: hidden;
+        
+        
+    }.htresBanner2
+    {
+        font-size: 48px;
+        margin:0px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    .contenidoPrincipal
+    {
+        padding:0px;
+        min-height: calc(100% -200px);
+    }
+    .imgBanner
+    {
+        max-height: 100px;
+        min-height: 100px;
+        margin-top:10px;
+        background-color:rgba(255,255,255,0.2);
+        border-radius: 5px;
+        //display: inline-block;
+    }
+    .txtBanner
+    {
+        background-color:rgba(255,255,255,0.8);
+        max-height: 100px;
+        min-height: 100px;
+        margin-top:10px;
+        border-radius:5px;
+        font-family: 'Arial';
+        font-size: 36px;
+        text-align: center;
+        //display: inline-block;
+    }
+    .contenido
+    {
+        border:solid 2px black;
+        min-height: calc(100%-120px);
+        height: calc(100%-120px);
+        background-color: rgba(0,0,0,0.25);
+    }
+    .vertical-center 
+    {
+        vertical-align: middle !important;
+    }
+    #changuita
+    {
+        min-height: 740px;
+        max-height: 740px;
+        color:white;
+        background-color: white;
+        
+    }
+    .footer
+    {
+        background-color:rgba(0,0,0,0.6);
+        margin-top:15px;
+        min-height: 60px;
+        max-height: 60px;
+        max-width: 1872px;      //REPARAR ESTO!
+        position:fixed;
+        bottom:10px;
+    }
