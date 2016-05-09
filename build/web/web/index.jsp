@@ -28,7 +28,7 @@
             
             <!-- SUB BANNER-->
             <div class="banner2">
-                <h3 class="htresBanner2">Sorteo Matutina del Martes 19 Abril 2016</h3>
+                <h3 class="htresBanner2">Sorteo Matutina del Viernes 6 Mayo 2016</h3>
             </div>
             
             <!-- PRINCIPAL -->
@@ -49,10 +49,28 @@
             
             <!-- CHANGUITA:-->
             <div id="changuita" class="col-xs-12" hidden>
-                <div class="listaChanguita" ng-repeat="c in changuita">
-                    {{c}}
+                
+                <!-- HEADER CHANGUITA:-->
+                <div class="listaChanguita col-xs-12">
+                    <div class="headerChanguita">Changuita:</div>
                 </div>
+                
+                <!-- LISTADO 20 CHANGUITAS: -->
+                <div class="lista{{columna}} col-xs-3" ng-repeat="columna in bucle4">
+                    <div id="item1lista1" class="itemsDeListas col-xs-12" ng-repeat="fila in bucle5">
+                        
+                        <div class="indice col-xs-3" id="indice{{(columna*5) + (fila+1)}}">{{(columna*5) + (fila+1)}}</div>
+                        <div class="numero col-xs-9" id="numero">{{changuita[(columna*5) + (fila)]}}</div>
+                    </div>
+                </div>
+                    
+                </div>
+                    
+                
+                    
+                    
             </div>
+        </div>
             
             <!-- FOOTER: -->
             <div class="footer col-xs-12">

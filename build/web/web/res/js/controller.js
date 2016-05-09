@@ -8,7 +8,7 @@
         $scope.bucle4 = new Array(0,1,2,3);
         $scope.tiempoInicial = 8 * 1000;   //ESPERA EN MICRO-SEGUNDOS.
         $scope.indiceVariable = 0;
-        $scope.changuita = [];
+        $scope.changuita = [5555,4444,5555,4444,6666,5555,4444,5555,4444,6666,5555,4444,5555,4444,6666,5555,4444,5555,4444,6666];
        
        $scope.findJuegos = function()
        {

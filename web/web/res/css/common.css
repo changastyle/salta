@@ -116,9 +116,22 @@
     {
         min-height: 740px;
         max-height: 740px;
-        color:white;
-        background-color: white;
+        color:black;
+        background-color: #4E1E29;
+        overflow: hidden;
         
+    }
+    .headerChanguita
+    {
+        text-align: center;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 5px 5px 0px 0px;
+        overflow:hidden;
+        font-family: 'Arial';
+        font-weight: 400;
+        font-size: 72px;
+        font-stretch: condensed;
+        color:white;
     }
     .footer
     {
@@ -126,7 +139,6 @@
         margin-top:15px;
         min-height: 60px;
         max-height: 60px;
-        max-width: 1872px;      //REPARAR ESTO!
-        position:fixed;
-        bottom:10px;
+        position:absolute;
+        bottom: 0px;
     }

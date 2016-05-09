@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import model.Juego;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
