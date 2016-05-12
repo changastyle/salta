@@ -9,8 +9,10 @@
 .itemsDeListas{
     width: 100%;
     //background-color: rgba(0,0,0,0.6);
-    font-size: 78px;
+    font-size: 86px;
     padding:0px;
+    padding-top: 10px;
+    padding-botom:10px;
     margin-bottom: 10px;
     cursor:pointer;
 }
@@ -57,6 +59,7 @@
     left:0px;
     text-align: center;
     overflow: hidden;
+    font-stretch: condensed;
 }
 .numero
 {

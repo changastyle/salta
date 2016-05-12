@@ -79,7 +79,18 @@
     .contenidoPrincipal
     {
         padding:0px;
-        min-height: calc(100% -200px);
+        max-height: 840px;
+        color:black;
+        background-color: #4E1E29;
+        overflow: hidden;
+    }
+    #changuita
+    {
+        max-height: 840px;
+        color:black;
+        background-color: #4E1E29;
+        overflow: hidden;
+        
     }
     .imgBanner
     {
@@ -113,15 +124,7 @@
     {
         vertical-align: middle !important;
     }
-    #changuita
-    {
-        min-height: 740px;
-        max-height: 740px;
-        color:black;
-        background-color: #4E1E29;
-        overflow: hidden;
-        
-    }
+    
     .headerChanguita
     {
         text-align: center;
