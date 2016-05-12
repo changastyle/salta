@@ -28,7 +28,8 @@
             
             <!-- SUB BANNER-->
             <div class="banner2">
-                <h3 class="htresBanner2">Sorteo Matutina del Viernes 6 Mayo 2016</h3>
+                <!--<h3 class="htresBanner2">Sorteo Matutina del Viernes 6 Mayo 2016</h3>-->
+                <h3 class="htresBanner2">{{fecha}}</h3>
             </div>
             
             <!-- PRINCIPAL -->
@@ -39,8 +40,14 @@
                         <h3 class="htresEncabezadoListas">{{juegos[b4].nombre}}</h3>
                     </div>
                     
+                    <!-- ITEM FIJO -->
+                    <div id="item1lista1" class="itemsDeListas col-xs-12">
+                        <div class="indice col-xs-3" id="indice1">1</div>
+                        <div class="numero col-xs-9" id="numero1">{{juegos[b4].numeros[0]}}</div>
+                    </div>
+                    
                     <!-- ITEM -->
-                    <div id="item1lista1" class="itemsDeListas col-xs-12" ng-repeat="b in bucle5">
+                    <div id="item1lista{{b+indiceVariable+1}}" class="itemsDeListas col-xs-12" ng-repeat="b in bucle5">
                         <div class="indice col-xs-3" id="indice{{b + indiceVariable + 1}}">{{b + indiceVariable + 1}}</div>
                         <div class="numero col-xs-9" id="numero{{b + indiceVariable + 1}}">{{juegos[b4].numeros[b+indiceVariable]}}</div>
                     </div>
@@ -57,10 +64,10 @@
                 
                 <!-- LISTADO 20 CHANGUITAS: -->
                 <div class="lista{{columna}} col-xs-3" ng-repeat="columna in bucle4">
-                    <div id="item1lista1" class="itemsDeListas col-xs-12" ng-repeat="fila in bucle5">
+                    <div id="item1lista1" class="itemsDeListas col-xs-12" ng-repeat="fila in bucle5Changuita">
                         
                         <div class="indice col-xs-3" id="indice{{(columna*5) + (fila+1)}}">{{(columna*5) + (fila+1)}}</div>
-                        <div class="numero col-xs-9" id="numero">{{changuita[(columna*5) + (fila)]}}</div>
+                        <div class="numero col-xs-9" id="numero{{(columna*5) + (fila +1)}}">{{changuita[(columna*5) + (fila)]}}</div>
                     </div>
                 </div>
                     

@@ -14,6 +14,21 @@
     margin-bottom: 10px;
     cursor:pointer;
 }
+#indice1
+{
+    color:#9B3C52;
+    color:yellow;
+    //background-color:red;
+}
+#numero1
+{
+    background-color:#912836;
+    color:yellow;
+}
+#item1lista21
+{
+   display: none;
+}
 .encabezadosLista
 {
     

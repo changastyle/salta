@@ -6,6 +6,7 @@
         background-attachment: fixed;
         background-size: cover;
         background-color:#9B3C52;
+        overflow: hidden;
     }
     .wrap1
     {

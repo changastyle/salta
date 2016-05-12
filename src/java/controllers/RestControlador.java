@@ -4,7 +4,9 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import model.Juego;
 import org.springframework.ui.Model;
@@ -83,6 +85,65 @@ public class RestControlador
         return arr;
     }
     
+    @RequestMapping(value = "/fecha", method = RequestMethod.GET)
+    public String fechaActual()
+    {
+        String strFechaSalida = null;
+        String strSorteo = null;
+        String strNombreDia = null;
+        String strNumeroDia = null;
+        String strNombreMes = null;
+        String strAnio = null;
+        
+        Date fechaActual  = new Date();
+        //SORTEO:
+        if(fechaActual.getHours() < 12)
+        {
+            strSorteo = "Matutina";
+        }else if(fechaActual.getHours() > 12 && fechaActual.getHours() < 18)
+        {
+            strSorteo = "Vespertina";
+        }
+        else
+        {
+            strSorteo = "Nocturna";
+        }
+        
+        //NOMBRE DIA:
+        switch(fechaActual.getDay())
+        {
+            case 0:strNombreDia = "Domingo"; break;
+            case 1:strNombreDia = "Lunes"; break;
+            case 2:strNombreDia = "Martes"; break;
+            case 3:strNombreDia = "Miercoles"; break;
+            case 4:strNombreDia = "Jueves"; break;
+            case 5:strNombreDia = "Viernes"; break;
+            case 6:strNombreDia = "Sabado"; break;
+        }
+        strNumeroDia = "" + fechaActual.getDate() ;
+        
+        //NOMBRE MES:
+        switch(fechaActual.getMonth())
+        {
+            case 0:strNombreMes = "Enero"; break;
+            case 1:strNombreMes = "Febrero"; break;
+            case 2:strNombreMes = "Marzo"; break;
+            case 3:strNombreMes = "Abril"; break;
+            case 4:strNombreMes = "Mayo"; break;
+            case 5:strNombreMes = "Junio"; break;
+            case 6:strNombreMes = "Julio"; break;
+            case 7:strNombreMes = "Agosto"; break;
+            case 8:strNombreMes = "Setiembre"; break;
+            case 9:strNombreMes = "Octubre"; break;
+            case 10:strNombreMes = "Noviembre"; break;
+            case 11:strNombreMes = "Diciembre"; break;
+        }
+        strAnio = "" + (fechaActual.getYear() + 1900);
+        
+        strFechaSalida = "Sorteo " + strSorteo + " " +strNombreDia + " del " + strNumeroDia + " " + strNombreMes + " " + strAnio;
+        
+        return strFechaSalida;
+    }
     /*
     //<editor-fold desc="NEGOCIOS:">
     @RequestMapping(value = "negocios" , method = RequestMethod.GET)
