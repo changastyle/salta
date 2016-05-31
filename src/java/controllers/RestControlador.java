@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import model.Game;
 import model.Juego;
 import model.JugadaDiaria;
 import org.springframework.ui.Model;
@@ -26,28 +27,40 @@ public class RestControlador
         return "Hola, como estas??";
     }
     @RequestMapping(value = "proceso")
-    public List<JugadaDiaria> prodecimiento()
+    public List<Game> prodecimiento()
     {
-        List<JugadaDiaria> jugadas = new java.util.ArrayList<JugadaDiaria>();
-        String salida = Funciones.hacer();
+        List<Game> salida = new java.util.ArrayList<Game>();
+        
+        Funciones.hacer();
        
         String provincias[] = {"Lot._de_Salta", "Jujuy", "Tucuman", "Nacional"};
         String horarios[] = {"P","V","E","N"};      //PRIMERA ; VESPERTINA; EXTRA ; NOCTURNA
         
         for(String provincia :provincias)
         {
+            Game game = new Game();
+            if(provincia.equalsIgnoreCase(provincias[0]))
+            {
+                game.setNombre("Loteria de Salta");
+            }
+            else
+            {
+                game.setNombre(provincia);
+            }
+            
             for(String horario : horarios)
             {
                 String sorteoAux = leerArchivo("/var/sorteos/Tombola_" + provincia +"_" + horario + ".json");
                 if(sorteoAux != null)
                 {
-                    jugadas.add(parseoDelWS(sorteoAux));
+                    game.addJugadaDiaria(parseoDelWS(sorteoAux));
                     //salida += parseoDelWS(sorteoAux);
                 }
             }
+            salida.add(game);
         }
                 
-        return jugadas;
+        return salida;
     }
     @RequestMapping(value = "/juegos", method = RequestMethod.GET)
     public java.util.List<model.Juego> findJuegos()

@@ -5,27 +5,37 @@
     //margin-right:25px;
     box-sizing: border-box;
     transition: 1s;
+    
+    padding-bottom:12px;
 }
 .itemsDeListas{
     width: 100%;
     //background-color: rgba(0,0,0,0.6);
     font-size: 86px;
     padding:0px;
-    padding-top: 10px;
-    padding-botom:10px;
+    padding-top: 8px;
+    padding-botom:8px;
     margin-bottom: 10px;
     cursor:pointer;
+    min-height: 120px;
+    max-height: 120px;
 }
 #indice1
 {
     color:#9B3C52;
     color:yellow;
+    height: 100%;
+        min-height: 120px;
+
     //background-color:red;
 }
 #numero1
 {
     background-color:#912836;
     color:yellow;
+    height: 100%;
+        min-height: 120px;
+
 }
 #item1lista21
 {
@@ -45,7 +55,7 @@
     overflow:hidden;
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 72px;
+    font-size: 68px;
     font-stretch: condensed;
 }
 .indice
@@ -60,6 +70,7 @@
     text-align: center;
     overflow: hidden;
     font-stretch: condensed;
+    min-height: 120px;
 }
 .numero
 {
@@ -69,9 +80,7 @@
     background-color:white;
     overflow: hidden;
     font-weight: bold;
-    //font-family: monospace;
-}
-.huge
-{
-   
+    min-height: 120px;
+
+   // font-family: monospace;
 }

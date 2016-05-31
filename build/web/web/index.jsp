@@ -27,8 +27,7 @@
             
             <!-- SUB BANNER-->
             <div class="banner2">
-                <!--<h3 class="htresBanner2">Sorteo Matutina del Viernes 6 Mayo 2016</h3>-->
-                <h3 class="htresBanner2">{{fecha}}</h3>
+                <h3 class="htresBanner2">Sorteo {{juegoActual.nombre}} de {{juegoActual.detalles[0].fSorte}}</h3>
             </div>
             
             <!-- PRINCIPAL -->
@@ -36,19 +35,19 @@
                 
                 <div id="lista{{b4}}" class="listas col-xs-3" ng-repeat="b4 in bucle4">
                     <div class="encabezadosLista" ng-click="open('lista'+ b4)">
-                        <h3 class="htresEncabezadoListas">{{juegos[b4].nombre}}</h3>
+                        <h3 class="htresEncabezadoListas">{{juegoActual.detalles[b4].dSorte}}</h3>
                     </div>
                     
                     <!-- ITEM FIJO -->
                     <div id="item1lista1" class="itemsDeListas col-xs-12">
-                        <div class="indice col-xs-3" id="indice1">1</div>
-                        <div class="numero col-xs-9" id="numero1">{{juegos[b4].numeros[0]}}</div>
+                        <div class="indice col-xs-3" id="indice1">{{juegoActual.detalles[b4].extractos[0].posic}}</div>
+                        <div class="numero col-xs-9" id="numero1">{{juegoActual.detalles[b4].extractos[0].premio}}</div>
                     </div>
                     
                     <!-- ITEM -->
                     <div id="item1lista{{b+indiceVariable+1}}" class="itemsDeListas col-xs-12" ng-repeat="b in bucle5">
                         <div class="indice col-xs-3" id="indice{{b + indiceVariable + 1}}">{{b + indiceVariable + 1}}</div>
-                        <div class="numero col-xs-9" id="numero{{b + indiceVariable + 1}}">{{juegos[b4].numeros[b+indiceVariable]}}</div>
+                        <div class="numero col-xs-9" id="numero{{b + indiceVariable + 1}}">{{juegoActual.detalles[b4].extractos[b+indiceVariable].premio}}</div>
                     </div>
                 </div>
             </div>

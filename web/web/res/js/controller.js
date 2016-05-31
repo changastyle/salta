@@ -3,6 +3,8 @@
 
     app.controller('monitor', function ($scope, $http, $interval)
     {
+        $scope.juegoActual = null;
+        $scope.indiceJuego = 0;
         $scope.juegos = [];
         $scope.bucle5 = new Array(1,2,3,4);
         $scope.bucle5Changuita = new Array(0,1,2,3,4);
@@ -15,12 +17,14 @@
        {
             $.ajax
             ({
-                url:"../juegos",
+                url:"../proceso",
                 success: function (resultado, textStatus, jqXHR)
                 {
                     $scope.juegos = resultado;
                     console.log("juegos:" + JSON.stringify($scope.juegos));
 
+                    $scope.juegoActual = $scope.juegos[0];
+                    console.log("juegoActual:" + JSON.stringify($scope.juegoActual));
                     $scope.$apply();
                 }
             }); 
@@ -74,20 +78,73 @@
                $(".contenidoPrincipal").show("slow");
            });
            
+           if($scope.indiceJuego < 3)
+           {
+                $scope.indiceJuego ++;
+           }
+           else
+           {
+               $scope.indiceJuego = 0;
+           }
+           
+           //ANIMACION SUBBANNER:
+           $(".htresBanner2").addClass('animated');
+           $(".htresBanner2").addClass('flipInX');
+           
+           setTimeout(function()
+            {
+                $(".htresBanner2").removeClass('animated');
+                $(".htresBanner2").removeClass('flipInX');
+            },1000);
+            
+           $scope.juegoActual = $scope.juegos[$scope.indiceJuego];
+           $scope.$apply();
+           
+           //CONTROLA LA NACIONAL TIENE SOLO 2 COLUMNAS!:
+           if($scope.indiceJuego == 3)
+           {
+               console.log("INDICE = 3");
+               $("#lista0").removeClass("col-xs-3");
+               $("#lista0").addClass("col-xs-6");
+               
+               $("#lista1").removeClass("col-xs-3");
+               $("#lista1").addClass("col-xs-6");
+               
+               //$("#lista2").removeClass("col-xs-3");
+               $("#lista2").hide("slow");
+
+               
+               //$("#lista3").removeClass("col-xs-3");
+               $("#lista3").hide("slow");
+
+           }
+           else
+           {
+               $("#lista0").removeClass("col-xs-6");
+               $("#lista0").addClass("col-xs-3");
+               
+               $("#lista1").removeClass("col-xs-6");
+               $("#lista1").addClass("col-xs-3");
+               
+               $("#lista2").show("slow");
+               
+               $("#lista3").show("slow");
+           }
+           
        }
        $scope.findChanguita = function()
        {
            $.ajax
            (
+            {
+                url:"../changuita",
+                success: function (resultado, textStatus, jqXHR)
                 {
-                    url:"../changuita",
-                    success: function (resultado, textStatus, jqXHR)
-                    {
-                        console.log("findChanguita:" + JSON.stringify(resultado));
-                        $scope.changuita = resultado;
-                        $scope.$apply();
-                    }
+                    console.log("findChanguita:" + JSON.stringify(resultado));
+                    $scope.changuita = resultado;
+                    $scope.$apply();
                 }
+            }
            );
        }
        $scope.findFecha = function()
@@ -108,7 +165,8 @@
       
        $scope.findJuegos();
        $scope.findChanguita();
-       $scope.findFecha();
+       //$scope.findFecha();
+       
        //EJECUTANDO EL MOVIMIENTO DE LOS NUMEROS CADA CIERTO INTERVALO DE TIEMPO:
        setInterval(function()
        {
@@ -118,8 +176,6 @@
                 $scope.indiceVariable += 4;
                 $(".itemsDeListas").each(function(index,element)
                 {
-                    //$(element).hide("slow");
-                    //console.log($(element).attr('id'));
                     if($(element).attr('id') != "item1lista1")
                     {
                         $(element).addClass('animated');
@@ -132,11 +188,6 @@
                     }
                     
                 });
-                /*
-                $("#contenidoPrincipal").hide("slow",function()
-                {
-                    $("#contenidoPrincipal").show("slow");
-                });*/
            }
            else if($scope.indiceVariable >= 16)
            {
@@ -158,34 +209,4 @@
        },
         $scope.tiempoIntervalo);
     });
-       /*setInterval(function()
-       {
-           console.log("espero tiempo inicial " + $scope.tiempoInicial);
-           if ($scope.indiceVariable < 14)
-           {
-                $scope.indiceVariable += 5;
-                $("#contenidoPrincipal").hide("slow",function()
-                {
-                    $("#contenidoPrincipal").show("slow");
-                });
-           }
-           else if($scope.indiceVariable == 15)
-           {
-                console.log("changita visible : " + $("#changuita").css('display'));
-                
-                if( $("#changuita").css('display') == "none")
-                {
-                    $scope.mostrarChanguita();
-                }
-                else
-                {
-                    $scope.ocultarChanguita();
-                    $scope.indiceVariable = 0;
-                }
-           }
-           
-           //$scope.$digest();
-           $scope.$apply();
-       },
-       $scope.tiempoInicial);
-    });*/
+       
