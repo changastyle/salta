@@ -5,8 +5,14 @@
     //margin-right:25px;
     box-sizing: border-box;
     transition: 1s;
-    
+    padding: 0px;
+    padding-right: 12px;
+    padding-top:12px;
     padding-bottom:12px;
+}
+#lista0
+{
+    padding-left:12px;
 }
 .itemsDeListas{
     width: 100%;
@@ -19,6 +25,33 @@
     cursor:pointer;
     min-height: 120px;
     max-height: 120px;
+}.indice
+{
+    //border:solid 2px black;
+    border-radius: 5px 0px 0px 5px;
+    display:inline-block;
+    background-color:#173E43;
+    color:white;
+    position:relative;
+    left:0px;
+    text-align: center;
+    overflow: hidden;
+    font-stretch: condensed;
+    min-height: 120px;
+    
+    padding:0px;
+}
+.numero
+{
+    //border:solid 2px black;
+    text-align: center;
+    display:inline-block;
+    background-color:white;
+    overflow: hidden;
+    font-weight: bold;
+    min-height: 120px;
+    padding:0px;
+   // font-family: monospace;
 }
 #indice1
 {
@@ -34,8 +67,7 @@
     background-color:#912836;
     color:yellow;
     height: 100%;
-        min-height: 120px;
-
+    min-height: 120px;
 }
 #item1lista21
 {
@@ -43,44 +75,46 @@
 }
 .encabezadosLista
 {
-    
     color:white;
     text-align: center;
     cursor:pointer;
 }
-.htresEncabezadoListas
+.encabezadoListaExt
 {
-    background-color: rgba(0,0,0,0.6);
-    border-radius: 5px 5px 0px 0px;
+     display: table;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
     overflow:hidden;
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 68px;
+    font-size: 48px;
     font-stretch: condensed;
+    
+    margin-top:12px;
+    padding-top:8px;
+    vertical-align: bottom;
 }
-.indice
+.encabezadoLista
 {
-    //border:solid 2px black;
-    border-radius: 5px 0px 0px 5px;
-    display:inline-block;
-    background-color:#173E43;
-    color:white;
-    position:relative;
-    left:0px;
-    text-align: center;
-    overflow: hidden;
-    font-stretch: condensed;
-    min-height: 120px;
-}
-.numero
-{
-    //border:solid 2px black;
-    text-align: center;
-    display:inline-block;
-    background-color:white;
-    overflow: hidden;
-    font-weight: bold;
-    min-height: 120px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow:hidden;
+    font-family: 'Arial';
 
-   // font-family: monospace;
+    font-size: 36px;
+    
+    min-height: 120px;
+    max-height: 120px;
+    text-align: center;
+    color:white;
+    display: flex;
+    align-items: center;
+}
+.encabezadoListaFecha
+{
+    //padding-top:25px;
+}
+.encabezadoListaNombre
+{
+    font-size: 36px;
 }

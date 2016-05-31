@@ -27,15 +27,20 @@
             
             <!-- SUB BANNER-->
             <div class="banner2">
-                <h3 class="htresBanner2">Sorteo {{juegoActual.nombre}} de {{juegoActual.detalles[0].fSorte}}</h3>
+                <h3 class="htresBanner2">Sorteo {{juegoActual.nombre}} </h3>
             </div>
             
             <!-- PRINCIPAL -->
             <div id="contenidoPrincipal" class="contenidoPrincipal col-xs-12" >
                 
                 <div id="lista{{b4}}" class="listas col-xs-3" ng-repeat="b4 in bucle4">
-                    <div class="encabezadosLista" ng-click="open('lista'+ b4)">
-                        <h3 class="htresEncabezadoListas">{{juegoActual.detalles[b4].dSorte}}</h3>
+                    <div class="encabezadoLista">
+                        <div class="col-xs-8 encabezadoListaNombre">
+                            {{juegoActual.detalles[b4].dSorte}}
+                        </div>
+                        <div class="col-xs-4 encabezadoListaFecha">
+                             {{juegoActual.detalles[b4].fSorte.substring(0,5)}}
+                        </div>
                     </div>
                     
                     <!-- ITEM FIJO -->
@@ -53,7 +58,7 @@
             </div>
             
             <!-- CHANGUITA:-->
-            <div id="changuita" class="col-xs-12" hidden>
+            <div id="changuita" class="col-xs-12" hidden >
                 
                 <!-- HEADER CHANGUITA:-->
                 <div class="listaChanguita col-xs-12">
@@ -61,7 +66,7 @@
                 </div>
                 
                 <!-- LISTADO 20 CHANGUITAS: -->
-                <div class="lista{{columna}} col-xs-3" ng-repeat="columna in bucle4">
+                <div id="lista{{columna}}" class="lista{{columna}} listas col-xs-3" ng-repeat="columna in bucle4">
                     <div id="item1lista1" class="itemsDeListas col-xs-12" ng-repeat="fila in bucle5Changuita">
                         
                         <div class="indice col-xs-3" id="indice{{(columna*5) + (fila+1)}}">{{(columna*5) + (fila+1)}}</div>

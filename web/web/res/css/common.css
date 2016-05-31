@@ -67,8 +67,8 @@
         text-align: center;
         padding:4px;
         overflow: hidden;
-        max-height: 52px;
-        min-height: 52px;
+        max-height: 60px;
+        min-height: 60px;
         
         
     }.htresBanner2
@@ -93,7 +93,7 @@
         color:black;
         background-color: #4E1E29;
         overflow: hidden;
-        
+        padding:0px;
     }
     .imgBanner
     {
@@ -133,14 +133,14 @@
     .headerChanguita
     {
         text-align: center;
-        background-color: rgba(0,0,0,0.6);
-        border-radius: 5px 5px 0px 0px;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 5px;
         overflow:hidden;
         font-family: 'Arial';
-        font-weight: 400;
-        font-size: 72px;
-        font-stretch: condensed;
+        font-size: 36px;
         color:white;
+        padding:12px;
+        margin-top:12px;
     }
     .footer
     {
@@ -150,4 +150,8 @@
         max-height: 60px;
         position:absolute;
         bottom: 0px;
+    }
+    .listaChanguita
+    {
+        padding:0px;
     }
