@@ -7,7 +7,7 @@
         $scope.bucle5 = new Array(1,2,3,4);
         $scope.bucle5Changuita = new Array(0,1,2,3,4);
         $scope.bucle4 = new Array(0,1,2,3);
-        $scope.tiempoIntervalo = 3 * 1000;   //ESPERA EN MICRO-SEGUNDOS.
+        $scope.tiempoIntervalo = 6 * 1000;   //ESPERA EN MICRO-SEGUNDOS.
         $scope.indiceVariable = 0;
         $scope.changuita = [5555,4444,5555,4444,6666,5555,4444,5555,4444,6666,5555,4444,5555,4444,6666,5555,4444,5555,4444,6666];
        
@@ -19,7 +19,7 @@
                 success: function (resultado, textStatus, jqXHR)
                 {
                     $scope.juegos = resultado;
-                    console.log("resultado:" + JSON.stringify($scope.juegos));
+                    console.log("juegos:" + JSON.stringify($scope.juegos));
 
                     $scope.$apply();
                 }

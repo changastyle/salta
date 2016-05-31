@@ -1,5 +1,7 @@
 package controllers;
 
+import static controllers.Funciones.leerArchivo;
+import static controllers.Funciones.parseoDelWS;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,6 +11,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import model.Juego;
+import model.JugadaDiaria;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +24,30 @@ public class RestControlador
     public String saludar()
     {
         return "Hola, como estas??";
+    }
+    @RequestMapping(value = "proceso")
+    public List<JugadaDiaria> prodecimiento()
+    {
+        List<JugadaDiaria> jugadas = new java.util.ArrayList<JugadaDiaria>();
+        String salida = Funciones.hacer();
+       
+        String provincias[] = {"Lot._de_Salta", "Jujuy", "Tucuman", "Nacional"};
+        String horarios[] = {"P","V","E","N"};      //PRIMERA ; VESPERTINA; EXTRA ; NOCTURNA
+        
+        for(String provincia :provincias)
+        {
+            for(String horario : horarios)
+            {
+                String sorteoAux = leerArchivo("/var/sorteos/Tombola_" + provincia +"_" + horario + ".json");
+                if(sorteoAux != null)
+                {
+                    jugadas.add(parseoDelWS(sorteoAux));
+                    //salida += parseoDelWS(sorteoAux);
+                }
+            }
+        }
+                
+        return jugadas;
     }
     @RequestMapping(value = "/juegos", method = RequestMethod.GET)
     public java.util.List<model.Juego> findJuegos()
@@ -144,6 +171,9 @@ public class RestControlador
         
         return strFechaSalida;
     }
+    
+    
+    
     /*
     //<editor-fold desc="NEGOCIOS:">
     @RequestMapping(value = "negocios" , method = RequestMethod.GET)

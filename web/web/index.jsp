@@ -9,7 +9,6 @@
 <html>
     <head>
         <%@include file="common.jsp"%>
-        <link rel="stylesheet" href="res/css/listas.css">
     </head>
     <body ng-app="app" ng-controller="monitor">
         
@@ -71,20 +70,15 @@
                     </div>
                 </div>
                     
-                </div>
-                    
-                
-                    
-                    
             </div>
         </div>
             
             <!-- FOOTER: -->
-            <div class="footer col-xs-12">
-                <!--<img src="res/img/logoTecno.gif">-->
-                <h3 style="text-align: center;color:white">Tecno Accion S.A 2016</h3>
-            </div>
+        <div class="footer col-xs-12">
+            <!--<img src="res/img/logoTecno.gif">-->
+            <h3 style="text-align: center;color:white">Tecno Accion S.A 2016</h3>
         </div>
+    </div>
            
         
     </body>
